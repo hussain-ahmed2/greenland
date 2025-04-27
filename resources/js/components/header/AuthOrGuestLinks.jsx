@@ -8,9 +8,9 @@ export default function AuthOrGuestLinks() {
 
     return (
         <>
-            <CustomLink href={"/cart"} label={<ShoppingCart />} />
+            <CustomLink href={"/cart"} label={<ShoppingCart />} text="Cart" />
 
-            <div className="w-px h-6 rounded-full bg-neutral-900 opacity-60"></div>
+            <div className="max-md:hidden w-px h-6 rounded-full bg-neutral-900 opacity-60"></div>
 
             {props.user ? (
                 <CustomLink href={"/user"} label={<User />} />
