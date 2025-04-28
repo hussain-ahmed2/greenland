@@ -12,7 +12,7 @@ export default function Header() {
     }
 
     return (
-        <header className="bg-white text-neutral-900 font-medium border-b border-neutral-100">
+        <header className="bg-white text-neutral-900 font-medium border-b border-neutral-100 sticky top-0 z-50">
             <nav className="flex items-center justify-between gap-8 px-5 max-w-7xl mx-auto min-h-20">
                 <Link href={"/"}>
                     <svg
