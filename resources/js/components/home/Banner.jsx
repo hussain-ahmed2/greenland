@@ -21,7 +21,7 @@ export default function Banner() {
                 </div>
                 <form className="flex items-center bg-white p-2.5 rounded-xl focus-within:ring-4 ring-black/15 transition">
                     <input
-                        className="flex-1 outline-none px-2"
+                        className="w-full outline-none px-2"
                         type="text"
                         name="query"
                         placeholder="What are you looking for?"
