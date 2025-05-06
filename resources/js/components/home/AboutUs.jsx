@@ -14,7 +14,7 @@ export default function AboutUs() {
                         className="space-y-5 text-center"
                         key={article.id}
                     >
-                        <div className="h-24 aspect-square rounded-full bg-primary flex justify-center items-center mx-auto">
+                        <div className="h-24 aspect-square rounded-full bg-green-200 flex justify-center items-center mx-auto">
                             {article.logo}
                         </div>
                         <h3 className="text-lg font-bold">{article.title}</h3>
