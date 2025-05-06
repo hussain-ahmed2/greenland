@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Banner() {
     return (
-        <article className="bg-primary my-5 rounded-3xl p-12 flex max-md:flex-col-reverse justify-between gap-8 min-h-[32rem]">
+        <article className="bg-green-200 my-5 rounded-3xl p-12 flex max-md:flex-col-reverse justify-between gap-8 min-h-[32rem]">
             <div className="max-w-[32rem] flex flex-col gap-8 z-10">
                 <h1 className="font-extrabold text-6xl leading-16">
                     Buy your dream plants
@@ -19,7 +19,7 @@ export default function Banner() {
                         <p className="font-medium text-lg">Customers</p>
                     </div>
                 </div>
-                <form className="flex items-center bg-white p-2.5 rounded-xl focus-within:ring-4 ring-black/15 transition">
+                <form className="flex items-center bg-white p-2.5 rounded-xl focus-within:ring-4 ring-green-500/50 transition">
                     <input
                         className="w-full outline-none px-2"
                         type="text"
@@ -27,8 +27,8 @@ export default function Banner() {
                         placeholder="What are you looking for?"
                         required
                     />
-                    <button className="p-3 bg-primary rounded-lg hover:bg-neutral-600 active:bg-neutral-600 group transition">
-                        <Search className="text-neutral-600 group-hover:text-white group-active:text-white transition" />
+                    <button className="p-3 bg-green-300 rounded-lg hover:bg-green-400 active:bg-green-400 active:scale-[0.98] group transition">
+                        <Search className="text-neutral-500 group-hover:text-white group-active:text-white transition" />
                     </button>
                 </form>
             </div>
