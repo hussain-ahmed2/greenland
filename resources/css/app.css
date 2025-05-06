@@ -12,3 +12,9 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
     --color-primary: #C1DCDC;
 }
+
+@layer base {
+    html {
+        scroll-padding-top: 10rem;
+    }
+}
