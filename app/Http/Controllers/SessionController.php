@@ -11,10 +11,6 @@ use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
 {
-    public function index() {
-        return inertia('Auth/DashBoard');
-    }
-
     public function create() {
         return inertia('Auth/Login');
     }
