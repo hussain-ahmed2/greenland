@@ -2,9 +2,10 @@ import React from "react";
 import { ShoppingCart, User } from "lucide-react";
 import { usePage } from "@inertiajs/react";
 import CustomLink from './CustomLink';
+import LogoutButton from "../LogoutButton";
 
 export default function AuthOrGuestLinks() {
-    const { props } = usePage();
+    const { auth } = usePage().props;
 
     return (
         <>
@@ -12,8 +13,11 @@ export default function AuthOrGuestLinks() {
 
             <div className="max-md:hidden w-px h-6 rounded-full bg-neutral-900 opacity-60"></div>
 
-            {props.user ? (
-                <CustomLink href={"/user"} label={<User />} />
+            {auth.user ? (
+                <>
+                    <CustomLink href={"/dashboard"} label={<User />} />
+                    <LogoutButton />
+                </>
             ) : (
                 <>
                     <CustomLink href={"/login"} label={"Login"} />

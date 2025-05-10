@@ -12,7 +12,8 @@ export default function Button({
         <button
             className={clsx(
                 "font-medium px-6 py-3 bg-green-500 text-white rounded-md hover:bg-green-600 active:bg-green-600 active:scale-[.98] focus:ring-4 active:ring-4 ring-green-500/50 transition duration-300",
-                className
+                className,
+                disabled && "opacity-50 cursor-not-allowed"
             )}
             onClick={onClick}
             type={type}
