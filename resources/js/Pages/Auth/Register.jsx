@@ -2,7 +2,7 @@ import React from "react";
 import RootLayout from "../../components/layouts/RootLayout";
 import InputField from "../../components/forms/InputField";
 import Button from "../../components/Button";
-import { useForm } from "@inertiajs/react";
+import { Link, useForm } from "@inertiajs/react";
 
 export default function Register() {
     const { data, setData, post, errors, processing, reset, setError } = useForm({
@@ -29,6 +29,7 @@ export default function Register() {
         <RootLayout>
             <div className="max-w-[40rem] mx-auto my-10 rounded-lg">
                 <h1 className="text-3xl font-extrabold text-center mb-5">Register</h1>
+                <p className="text-center mb-3 text-neutral-500">Create an account</p>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <InputField
                         name="name"
@@ -68,6 +69,14 @@ export default function Register() {
 
                     <Button type="submit" label="Register" className="w-full" disabled={processing} />
                 </form>
+                <div>
+                    <div className="mt-3 text-neutral-500 text-center">
+                        Already have an account?&nbsp;
+                        <Link href="/login" className="text-green-500 hover:underline" prefetch>
+                            Login
+                        </Link>
+                    </div>
+                </div>
             </div>
         </RootLayout>
     );

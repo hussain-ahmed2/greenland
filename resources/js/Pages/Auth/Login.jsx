@@ -2,7 +2,8 @@ import React from "react";
 import RootLayout from "../../components/layouts/RootLayout";
 import InputField from "../../components/forms/InputField";
 import Button from "../../components/Button";
-import { useForm } from "@inertiajs/react";
+import { Link, useForm } from "@inertiajs/react";
+import CustomLink from "../../components/header/CustomLink";
 
 export default function Login() {
     const { data, setData, post, errors, processing, reset, setError, wasSuccessful } = useForm({
@@ -28,6 +29,9 @@ export default function Login() {
                 <h1 className="text-3xl font-extrabold text-center mb-5">
                     Login
                 </h1>
+                <p className="text-center mb-3 text-neutral-500">
+                    Login to your account
+                </p>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <InputField
                         name="email"
@@ -55,6 +59,13 @@ export default function Login() {
                         disabled={processing}
                     />
                 </form>
+
+                <div className="mt-3 text-neutral-500 text-center">
+                    Don&apos;t have an account?&nbsp;
+                    <Link href="/register" className="text-green-500 hover:underline" prefetch>
+                        Register
+                    </Link>
+                </div>
             </div>
         </RootLayout>
     );
