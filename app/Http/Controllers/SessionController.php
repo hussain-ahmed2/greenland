@@ -31,4 +31,13 @@ class SessionController extends Controller
         
         return redirect(route('user.dashboard'));
     }
+
+    public function destroy(Request $request) {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken(); 
+
+        return redirect(route('home'));
+    }
 }

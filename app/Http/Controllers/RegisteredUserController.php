@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Email;
 use Illuminate\Validation\Rules\Password;
 
@@ -13,15 +14,20 @@ class RegisteredUserController extends Controller
         return inertia('Auth/Register');
     }
 
-    public function store(Request $request) {
-        $credentials = $request->validate([
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
             'name' => ['required', 'min:3'],
-            'email' => ['required', Email::defaults(), 'unique:'.User::class],
-            'password' => ['required', Password::defaults(), 'confirmed']
+            'email' => ['required', Email::defaults(), 'unique:users'],
+            'password' => ['required', Password::defaults(), 'confirmed'],
         ]);
-        
-        User::create($credentials);
 
-        return redirect()->route('home');
+        $user = User::create($validatedData);
+
+        Auth::login($user);
+
+        $request->session()->regenerate();
+
+        return redirect()->intended(route('user.dashboard'));
     }
 }
